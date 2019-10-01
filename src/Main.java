@@ -1,5 +1,5 @@
 public class Main {
-    public static void main(String[] args) {
+    public void checkBTS() {
         MyIntegerBST OurTree = new MyIntegerBST();
 
         OurTree.insert(52);
@@ -21,4 +21,12 @@ public class Main {
         OurTree.printByLevels();
     }
 
+    public static void main(String[] args){
+        SequenceWithMinimum OurSequence = new SequenceWithMinimum();
+        OurSequence.insertLeft(5);
+        OurSequence.insertLeft(4);
+        OurSequence.insertRight(5);
+        OurSequence.insertRight(4);
+        OurSequence.printlist(OurSequence.head);
+    }
 }
