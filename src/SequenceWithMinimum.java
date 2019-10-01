@@ -1,10 +1,7 @@
-public class SequenceWithMinimum {
-<<<<<<< HEAD
+public class SequenceWithMinimum implements A1SequenceWithMinimum{
     ListNode head = null;
-=======
-    ListNode head;
-    ListNode tail;
->>>>>>> 921a410da082a9c1f6c8d0c3101cbb17a3775b9e
+    ListNode tail = null;
+
     ListNode minimum;
 
 
@@ -18,13 +15,6 @@ public class SequenceWithMinimum {
             this.data = d;
         }
 
-<<<<<<< HEAD
-=======
-        ListNode(Integer d) {
-            this.data = d;
-            prev = null;
-            next = null;}
->>>>>>> 921a410da082a9c1f6c8d0c3101cbb17a3775b9e
     }
 
     public void insertLeft(Integer value)
@@ -96,8 +86,9 @@ public class SequenceWithMinimum {
         }
     }
 
+    @Override
     public Integer findMinimum(){
-        ListNode minimum = null;
+        
 
     }
 
