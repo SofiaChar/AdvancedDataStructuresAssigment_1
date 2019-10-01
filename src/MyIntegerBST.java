@@ -36,8 +36,7 @@ public class MyIntegerBST implements A1Tree
             minDifference = Math.abs((Integer) current.nodeValue - value);
             minDiffValue = (Integer) current.nodeValue;
         }
-        // if k is less than ptr.key then move in
-        // left subtree else in right subtree
+        // if k is less than ptr.key then move in left subtree else in right subtree
         if (value.compareTo((Integer) current.nodeValue) < 0) {
             findMinDifference(current.left, value);
         } else{
