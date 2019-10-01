@@ -1,5 +1,6 @@
 public class SequenceWithMinimum {
     Node head;
+    Node tail;
     Node minimum;
 
     class Node <Integer> {
