@@ -1,13 +1,17 @@
 public class SequenceWithMinimum {
-    ListNode head;
+    ListNode head = null;
     ListNode minimum;
 
     class ListNode <Integer> {
         public Integer data;
-        public ListNode prev;
-        public ListNode next;
+        public ListNode<Integer> prev;
+        public ListNode<Integer> next;
 
-        ListNode(Integer d) { data = d; }
+
+        ListNode(Integer d) {
+            this.data = d;
+        }
+
     }
 
     public void insertLeft(Integer new_data)
@@ -70,4 +74,10 @@ public class SequenceWithMinimum {
             node = node.next;
         }
     }
+
+    public Integer findMinimum(){
+        ListNode minimum = null;
+
+    }
+
 }
