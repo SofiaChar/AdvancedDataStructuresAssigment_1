@@ -1,6 +1,12 @@
 public class SequenceWithMinimum {
+<<<<<<< HEAD
     ListNode head = null;
+=======
+    ListNode head;
+    ListNode tail;
+>>>>>>> 921a410da082a9c1f6c8d0c3101cbb17a3775b9e
     ListNode minimum;
+
 
     class ListNode <Integer> {
         public Integer data;
@@ -12,6 +18,13 @@ public class SequenceWithMinimum {
             this.data = d;
         }
 
+<<<<<<< HEAD
+=======
+        ListNode(Integer d) {
+            this.data = d;
+            prev = null;
+            next = null;}
+>>>>>>> 921a410da082a9c1f6c8d0c3101cbb17a3775b9e
     }
 
     public void insertLeft(Integer new_data)
@@ -57,11 +70,19 @@ public class SequenceWithMinimum {
 
     public void removeLeft()
     {
-
+        // Base case
+        if (head == null) {
+            return;
+        }
+        // If node to be deleted is head node
+        else {
+            head = head.next;
+        }
     }
+
     public void removeRight()
     {
-
+        tail = tail.prev;
     }
 
 

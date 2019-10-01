@@ -25,8 +25,11 @@ public class Main {
         SequenceWithMinimum OurSequence = new SequenceWithMinimum();
         OurSequence.insertLeft(5);
         OurSequence.insertLeft(4);
-        OurSequence.insertRight(5);
-        OurSequence.insertRight(4);
+        OurSequence.insertRight(6);
+        OurSequence.insertRight(7);
+
+        OurSequence.printlist(OurSequence.head);
+        OurSequence.removeLeft();
         OurSequence.printlist(OurSequence.head);
     }
 }
