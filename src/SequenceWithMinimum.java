@@ -15,9 +15,9 @@ public class SequenceWithMinimum {
             next = null;}
     }
 
-    public void insertLeft(Integer new_data)
+    public void insertLeft(Integer value)
     {
-        ListNode new_Node = new ListNode(new_data);
+        ListNode new_Node = new ListNode(value);
         /* 3. Make next of new node as head and previous as NULL */
         new_Node.next = head;
         new_Node.prev = null;
@@ -28,11 +28,11 @@ public class SequenceWithMinimum {
         head = new_Node;
     }
 
-    void insertRight(Integer new_data)
+    void insertRight(Integer value)
     {
         /* 1. allocate node
          * 2. put in the data */
-        ListNode new_node = new ListNode(new_data);
+        ListNode new_node = new ListNode(value);
 
         ListNode last = head; /* used in step 5*/
 
