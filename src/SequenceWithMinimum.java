@@ -1,17 +1,18 @@
 public class SequenceWithMinimum {
-    Node head;
-    Node minimum;
+    ListNode head;
+    ListNode minimum;
 
-    class Node <Integer> {
+    class ListNode <Integer> {
         public Integer data;
-        public Node prev, next;
+        public ListNode prev;
+        public ListNode next;
 
-        Node(Integer d) { data = d; }
+        ListNode(Integer d) { data = d; }
     }
 
     public void insertLeft(Integer new_data)
     {
-        Node new_Node = new Node(new_data);
+        ListNode new_Node = new ListNode(new_data);
         /* 3. Make next of new node as head and previous as NULL */
         new_Node.next = head;
         new_Node.prev = null;
@@ -26,9 +27,9 @@ public class SequenceWithMinimum {
     {
         /* 1. allocate node
          * 2. put in the data */
-        Node new_node = new Node(new_data);
+        ListNode new_node = new ListNode(new_data);
 
-        Node last = head; /* used in step 5*/
+        ListNode last = head; /* used in step 5*/
 
         /* 3. This new node is going to be the last node, so
          * make next of it as NULL*/
@@ -60,8 +61,8 @@ public class SequenceWithMinimum {
     }
 
 
-    public void printlist(Node node) {
-        Node last = null;
+    public void printlist(ListNode node) {
+        ListNode last = null;
         System.out.println("Traversal in forward Direction");
         while (node != null) {
             System.out.print(node.data + " ");
