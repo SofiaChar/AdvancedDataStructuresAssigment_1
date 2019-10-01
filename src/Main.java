@@ -24,12 +24,20 @@ public class Main {
     public static void main(String[] args){
         SequenceWithMinimum OurSequence = new SequenceWithMinimum();
         OurSequence.insertLeft(5);
-        OurSequence.insertLeft(4);
+        OurSequence.insertLeft(0);
         OurSequence.insertRight(6);
         OurSequence.insertRight(7);
+        OurSequence.insertRight(7);
+        OurSequence.insertRight(10);
 
         OurSequence.printlist(OurSequence.head);
-        OurSequence.removeLeft();
+//        Integer b = OurSequence.removeLeft();
+//        System.out.println("\n"+b);
+        OurSequence.printlist(OurSequence.head);
+
+
+        Integer m = OurSequence.findMinimum();
+        System.out.println("\n"+m);
         OurSequence.printlist(OurSequence.head);
     }
 }
