@@ -1,22 +1,28 @@
-import java.util.List;
 
-public class SequenceWithMinimum {
-    ListNode head = null;
-    ListNode tail = null;
+public class SequenceWithMinimum implements A1SequenceWithMinimum{
+    ListNode head;
+    ListNode tail;
 
 
     class ListNode<Integer> {
         public Integer data;
         public ListNode<Integer> prev;
         public ListNode<Integer> next;
-
-
         ListNode(Integer d) {
             this.data = d;
         }
-
     }
 
+    public void printlist(ListNode current) {
+        System.out.println("The list");
+        while (current != null) {
+            System.out.print(current.data + " ");
+            current = current.next;
+        }
+    }
+
+
+    @Override
     public void insertLeft(Integer value) {
         ListNode new_Node = new ListNode(value);
         /* 3. Make next of new node as head and previous as NULL */
@@ -27,14 +33,14 @@ public class SequenceWithMinimum {
             head.prev = new_Node;
         else {
             tail = new_Node;
-
         }
-
         /* 5. move the head to point to the new node */
         head = new_Node;
     }
 
-    void insertRight(Integer value) {
+
+    @Override
+    public void insertRight(Integer value) {
         ListNode new_node = new ListNode(value);
 
         /* 3. This new node is going to be the last node, so
@@ -62,9 +68,8 @@ public class SequenceWithMinimum {
         }
     }
 
-
-    public Integer removeLeft()
-    {
+    @Override
+    public Integer removeLeft() {
         // Base case
         if (head == null) {
             return (Integer) head.prev.data;
@@ -76,25 +81,16 @@ public class SequenceWithMinimum {
         return (Integer) head.prev.data;
     }
 
-    public Integer removeRight()
-    {
+    @Override
+    public Integer removeRight() {
         tail = tail.prev;
+        Integer temp = (Integer) tail.next.data;
         tail.next = null;
-        return (Integer) tail.prev.data;
+        return temp;
     }
 
-
-    public void printlist(ListNode node) {
-        ListNode last = null;
-        System.out.println("Traversal in forward Direction");
-        while (node != null) {
-            System.out.print(node.data + " ");
-            last = node;
-            node = node.next;
-        }
-    }
-
-    public Integer findMinimum(){
+    @Override
+    public Integer findMinimum() {
         //Node current will point to head
         ListNode current = head;
         Integer minimum;
@@ -109,9 +105,7 @@ public class SequenceWithMinimum {
             minimum = (Integer)head.data;
             while(current != null) {
                 //If the value of min is greater than the current's data
-
                 //Then, replace the value of min with current node's data
-
                 if(minimum > (Integer) current.data)
                     minimum = (Integer)current.data;
                 current = current.next;

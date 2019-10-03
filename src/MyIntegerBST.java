@@ -4,6 +4,18 @@ public class MyIntegerBST implements A1Tree
     private BinaryNode root;
     private Integer minDifference, minDiffValue;
 
+    public class BinaryNode <Integer>  {
+        public Integer nodeValue;
+
+        public BinaryNode left, right;
+
+        BinaryNode(Integer value) {
+            this.nodeValue = value;
+            left = null;
+            right = null;
+        }
+    }
+
     private BinaryNode addRecursive(BinaryNode current, Integer value) {
         if (current == null) {
             return new BinaryNode(value);
