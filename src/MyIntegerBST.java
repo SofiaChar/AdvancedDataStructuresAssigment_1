@@ -18,7 +18,6 @@ public class MyIntegerBST implements A1Tree
         }
     }
 
-
     private BinaryNode addRecursive(BinaryNode current, Integer value) {
         //if tree does not exist we create new tree
         if (current == null) {

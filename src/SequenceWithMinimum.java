@@ -1,6 +1,7 @@
 public class SequenceWithMinimum implements A1SequenceWithMinimum{
     ListNode head;
     ListNode tail;
+    ListNode minimun;
 
 
     class ListNode <Integer> {
@@ -27,9 +28,14 @@ public class SequenceWithMinimum implements A1SequenceWithMinimum{
         newNode.next = head;
         newNode.prev = null;
         // change prev of head node to new node if head exists or tail node to new one
-        if (head != null)
+        if (head != null){
             head.prev = newNode;
+            if (value < (Integer)minimun.data){
+                minimun = newNode;
+            }
+        }
         else {
+            minimun = newNode;
             tail = newNode;
         }
         head = newNode;
@@ -44,6 +50,7 @@ public class SequenceWithMinimum implements A1SequenceWithMinimum{
         newNode.next = null;
         // If the Linked List is empty, then make the new node as head
         if (head == null) {
+            minimun = newNode;
             //Both head and tail will point to newNode
             head = tail = newNode;
             head.prev = null;
@@ -55,6 +62,9 @@ public class SequenceWithMinimum implements A1SequenceWithMinimum{
             newNode.prev = tail;
             tail = newNode;
             tail.next = null;
+            if (value < (Integer)minimun.data){
+                minimun = newNode;
+            }
         }
         System.out.println("Inserted on the right: " + value);
     }
@@ -87,25 +97,13 @@ public class SequenceWithMinimum implements A1SequenceWithMinimum{
 
     @Override
     public Integer findMinimum() {
-        ListNode current = head;
-        Integer minimum;
-
         //Check if list is empty
         if(head == null) {
             System.out.println("List is empty");
             return 0;
-        } else {
-            //minimum store the value of head's data
-            minimum = (Integer)head.data;
-            //go throught whole sequence and find minimum element
-            while(current != null) {
-                //in case if current element is smaller than minimum,
-                //than minimum equals current element
-                if(minimum > (Integer)current.data)
-                    minimum = (Integer)current.data;
-                current = current.next;
-            }
         }
-        return minimum;
+        if(head==tail)
+            return (Integer) head.data;
+        return (Integer) minimun.data;
     }
 }
