@@ -30,14 +30,17 @@ public class Main {
         OurSequence.insertRight(7);
         OurSequence.insertRight(10);
 
-        OurSequence.printlist(OurSequence.head);
-        Integer b = OurSequence.removeRight();
-        System.out.println("\n" + b);
-        OurSequence.printlist(OurSequence.head);
+        OurSequence.printSequence(OurSequence.head);
 
-//
-//        Integer m = OurSequence.findMinimum();
-//        System.out.println("\n"+m);
-//        OurSequence.printlist(OurSequence.head);
+        Integer remRight = OurSequence.removeRight();
+        System.out.println("\n\nRemoved right element: " + remRight);
+        OurSequence.printSequence(OurSequence.head);
+
+        Integer remLeft = OurSequence.removeLeft();
+        System.out.println("\n\nRemoved left element: " + remLeft);
+        OurSequence.printSequence(OurSequence.head);
+
+        Integer min = OurSequence.findMinimum();
+        System.out.println("\n\nThe minimum of the sequence is " + min);
     }
 }
