@@ -2,12 +2,14 @@
 public class MyIntegerBST implements A1Tree
 {
     private BinaryNode root;
-    private Integer minDifference, minDiffValue;
+    private Integer minDifference;
+    private  Integer minDifferenceValue;
 
     public class BinaryNode <Integer>  {
         public Integer nodeValue;
 
-        public BinaryNode left, right;
+        public BinaryNode left;
+        public BinaryNode right;
 
         BinaryNode(Integer value) {
             this.nodeValue = value;
@@ -39,14 +41,14 @@ public class MyIntegerBST implements A1Tree
 
         // If k itself is present
         if (current.nodeValue == value) {
-            minDiffValue = value;
+            minDifferenceValue = value;
             return;
         }
         // update min_diff and min_diff_key by checking
         // current node value
         if (minDifference > Math.abs((Integer) current.nodeValue - value)) {
             minDifference = Math.abs((Integer) current.nodeValue - value);
-            minDiffValue = (Integer) current.nodeValue;
+            minDifferenceValue = (Integer) current.nodeValue;
         }
         // if k is less than ptr.key then move in left subtree else in right subtree
         if (value.compareTo((Integer) current.nodeValue) < 0) {
@@ -96,10 +98,10 @@ public class MyIntegerBST implements A1Tree
     @Override
     public Integer mostSimilarValue(Integer value) {
         minDifference = 999999999;
-        minDiffValue = -1;
+        minDifferenceValue = -1;
         findMinDifference(root, value);
-        System.out.println("MostSimilarValue for " + value + " is " + minDiffValue);
-        return minDiffValue;
+        System.out.println("MostSimilarValue for " + value + " is " + minDifferenceValue);
+        return minDifferenceValue;
     }
 
     @Override

@@ -1,4 +1,3 @@
-
 public class SequenceWithMinimum implements A1SequenceWithMinimum{
     ListNode head;
     ListNode tail;
@@ -78,16 +77,23 @@ public class SequenceWithMinimum implements A1SequenceWithMinimum{
             return (Integer) head.prev.data;
         } else {
             head = head.next;
+            Integer temp = (Integer) head.prev.data;
+            head.prev = null;
+            return temp;
         }
-        return (Integer) head.prev.data;
     }
 
     @Override
     public Integer removeRight() {
-        tail = tail.prev;
-        Integer temp = (Integer) tail.next.data;
-        tail.next = null;
-        return temp;
+        // Base case
+        if (head == null) {
+            return (Integer) head.prev.data;
+        } else {
+            tail = tail.prev;
+            Integer temp = (Integer) tail.next.data;
+            tail.next = null;
+            return temp;
+        }
     }
 
     @Override
