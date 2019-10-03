@@ -81,7 +81,7 @@ public class SequenceWithMinimum {
     {
         tail = tail.prev;
         tail.next = null;
-        return (Integer) tail.data;
+        return (Integer) tail.prev.data;
     }
 
 
