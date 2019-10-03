@@ -18,12 +18,16 @@ public class MyIntegerBST implements A1Tree
         }
     }
 
+
     private BinaryNode addRecursive(BinaryNode current, Integer value) {
+        //if tree does not exist we create new tree
         if (current == null) {
             return new BinaryNode(value);
         }
+        //create variable of difference value we insert and root of current subtree
         int compareRes = value.compareTo((Integer) current.nodeValue);
 
+        //depending on compareRes add element to suitable side
         if (compareRes < 0) {
             current.left = addRecursive(current.left, value);
         } else if (compareRes > 0) {
@@ -43,7 +47,7 @@ public class MyIntegerBST implements A1Tree
             minDifferenceValue = value;
             return;
         }
-        // update minDifference and minDifferenceValue by checking
+        // update minDifference and minDifferenceValue by checking absolute difference
         if (minDifference > Math.abs((Integer) current.nodeValue - value)) {
             minDifference = Math.abs((Integer) current.nodeValue - value);
             minDifferenceValue = (Integer) current.nodeValue;
@@ -57,12 +61,15 @@ public class MyIntegerBST implements A1Tree
     }
 
     private Integer getHeight(BinaryNode current) {
+        //if the tree does not exist, the height is 0
         if(current == null) {
             return 0;
         } else {
+            //recursively find height of each subtree
             int leftHeight = getHeight(current.left);
             int rightHeight = getHeight(current.right);
 
+            //return the biggest height
             if(rightHeight > leftHeight) {
                 return rightHeight + 1;
             } else {
@@ -74,8 +81,11 @@ public class MyIntegerBST implements A1Tree
     private void printLevel(BinaryNode current , int level) {
         if (current == null)
             return;
+
+        // print root of the tree
         if (level == 1)
             System.out.print(current.nodeValue + " ");
+        //print children of current element by calling this function recursively
         else if (level > 1)
         {
             printLevel(current.left, level-1);
@@ -83,6 +93,7 @@ public class MyIntegerBST implements A1Tree
         }
     }
 
+    //constructor of the class
     public MyIntegerBST() {
         root = null ;
     }
@@ -97,6 +108,7 @@ public class MyIntegerBST implements A1Tree
     public Integer mostSimilarValue(Integer value) {
         minDifference = 999999999;
         minDifferenceValue = -1;
+        //finding values of 'minDifference' and 'minDifferenceValue' by calling method findMinDifference()
         findMinDifference(root, value);
         System.out.println("MostSimilarValue for " + value + " is " + minDifferenceValue);
         return minDifferenceValue;
@@ -106,6 +118,7 @@ public class MyIntegerBST implements A1Tree
     public void printByLevels() {
         int height = getHeight(root);
         int currLevel;
+        //printing each level of the tree in loop until level does not equal to height of the tree
         for (currLevel = 0; currLevel < height; currLevel++) {
             System.out.print("\nDepth "+ currLevel + ": ");
             printLevel(root, currLevel+1);

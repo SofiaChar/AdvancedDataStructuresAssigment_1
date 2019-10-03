@@ -87,21 +87,21 @@ public class SequenceWithMinimum implements A1SequenceWithMinimum{
 
     @Override
     public Integer findMinimum() {
-        //Node current will point to head
         ListNode current = head;
         Integer minimum;
 
-        //Checks if list is empty
+        //Check if list is empty
         if(head == null) {
             System.out.println("List is empty");
             return 0;
         } else {
-            //Initially, min will store the value of head's data
+            //minimum store the value of head's data
             minimum = (Integer)head.data;
+            //go throught whole sequence and find minimum element
             while(current != null) {
-                //If the value of min is greater than the current's data
-                //Then, replace the value of min with current node's data
-                if(minimum > (Integer) current.data)
+                //in case if current element is smaller than minimum,
+                //than minimum equals current element
+                if(minimum > (Integer)current.data)
                     minimum = (Integer)current.data;
                 current = current.next;
             }
