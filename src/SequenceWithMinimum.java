@@ -1,5 +1,5 @@
 
-public class SequenceWithMinimum {
+public class SequenceWithMinimum implements A1SequenceWithMinimum{
     ListNode head;
     ListNode tail;
 
@@ -14,6 +14,15 @@ public class SequenceWithMinimum {
         }
     }
 
+    public void printlist(ListNode current) {
+        System.out.println("The list");
+        while (current != null) {
+            System.out.print(current.data + " ");
+            current = current.next;
+        }
+    }
+
+    @Override
     public void insertLeft(Integer value) {
         ListNode new_Node = new ListNode(value);
         /* 3. Make next of new node as head and previous as NULL */
@@ -29,6 +38,7 @@ public class SequenceWithMinimum {
         head = new_Node;
     }
 
+    @Override
     public void insertRight(Integer value) {
         ListNode new_node = new ListNode(value);
 
@@ -56,6 +66,7 @@ public class SequenceWithMinimum {
         }
     }
 
+    @Override
     public Integer removeLeft() {
         // Base case
         if (head == null) {
@@ -68,6 +79,7 @@ public class SequenceWithMinimum {
         return (Integer) head.prev.data;
     }
 
+    @Override
     public Integer removeRight() {
         tail = tail.prev;
         Integer temp = (Integer) tail.next.data;
@@ -75,16 +87,7 @@ public class SequenceWithMinimum {
         return temp;
     }
 
-    public void printlist(ListNode node) {
-        ListNode last = null;
-        System.out.println("Traversal in forward Direction");
-        while (node != null) {
-            System.out.print(node.data + " ");
-            last = node;
-            node = node.next;
-        }
-    }
-
+    @Override
     public Integer findMinimum() {
         //Node current will point to head
         ListNode current = head;
@@ -101,7 +104,6 @@ public class SequenceWithMinimum {
             while(current != null) {
                 //If the value of min is greater than the current's data
                 //Then, replace the value of min with current node's data
-
                 if(minimum > (Integer) current.data)
                     minimum = (Integer)current.data;
                 current = current.next;
@@ -109,4 +111,5 @@ public class SequenceWithMinimum {
         }
         return minimum;
     }
+
 }
