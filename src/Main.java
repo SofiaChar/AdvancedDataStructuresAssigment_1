@@ -31,13 +31,18 @@ public class Main {
         OurSequence.insertRight(10);
 
         OurSequence.printlist(OurSequence.head);
+
 //        Integer b = OurSequence.removeLeft();
 //        System.out.println("\n"+b);
        // OurSequence.printlist(OurSequence.head);
-
-
-        Integer m = OurSequence.findMinimum();
-        System.out.println("\n"+m);
+        Integer b = OurSequence.removeRight();
+        System.out.println("\n" + b);
         OurSequence.printlist(OurSequence.head);
+
+
+//
+//        Integer m = OurSequence.findMinimum();
+//        System.out.println("\n"+m);
+//        OurSequence.printlist(OurSequence.head);
     }
 }
