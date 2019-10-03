@@ -24,7 +24,7 @@ public class Main {
     public static void main(String[] args){
         SequenceWithMinimum OurSequence = new SequenceWithMinimum();
         OurSequence.insertLeft(5);
-        OurSequence.insertLeft(0);
+        OurSequence.insertLeft(20);
         OurSequence.insertRight(6);
         OurSequence.insertRight(7);
         OurSequence.insertRight(7);
@@ -33,7 +33,7 @@ public class Main {
         OurSequence.printlist(OurSequence.head);
 //        Integer b = OurSequence.removeLeft();
 //        System.out.println("\n"+b);
-        OurSequence.printlist(OurSequence.head);
+       // OurSequence.printlist(OurSequence.head);
 
 
         Integer m = OurSequence.findMinimum();

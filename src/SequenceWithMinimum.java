@@ -1,8 +1,8 @@
 import java.util.List;
 
 public class SequenceWithMinimum {
-    ListNode head = null;
-    ListNode tail = null;
+    public ListNode head = null;
+    public ListNode tail = null;
 
 
     class ListNode <Integer> {
@@ -37,7 +37,7 @@ public class SequenceWithMinimum {
          * 2. put in the data */
         ListNode new_node = new ListNode(value);
 
-        ListNode last = head; /* used in step 5*/
+        //ListNode tail = head; /* used in step 5*/
 
         /* 3. This new node is going to be the last node, so
          * make next of it as NULL*/
@@ -51,19 +51,19 @@ public class SequenceWithMinimum {
             head.prev = null;
             //tail's next will point to null, as it is the last node of the list
             tail.next = null;
-
             return;
         }
         else {
-            //newNode will be added after tail such that tail's next will point to newNode
-            tail.next = new_node;
-            //newNode's previous will point to tail
-            new_node.prev = tail;
-            //newNode will become new tail
-            tail = new_node;
-            //As it is last node, tail's next will point to null
-            tail.next = null;
-        }
+                //newNode will be added after tail such that tail's next will point to newNode
+                tail.next = new_node;
+                //newNode's previous will point to tail
+                new_node.prev = tail;
+                //newNode will become new tail
+                tail = new_node;
+                //As it is last node, tail's next will point to null
+                tail.next = null;
+            }
+
 //        /* 5. Else traverse till the last node */
 //        while (last.next != null)
 //            last = last.next;
