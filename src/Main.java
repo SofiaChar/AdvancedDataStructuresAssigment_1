@@ -1,7 +1,7 @@
 public class Main {
-    public void checkBTS() {
+    public static void main(String[] args){
         MyIntegerBST OurTree = new MyIntegerBST();
-
+        System.out.println("\n---------Exersice 1---------\n");
         OurTree.insert(52);
         OurTree.insert(40);
         OurTree.insert(35);
@@ -19,9 +19,9 @@ public class Main {
         OurTree.mostSimilarValue(30);
 
         OurTree.printByLevels();
-    }
 
-    public static void main(String[] args){
+        System.out.println("\n\n---------Exersice 3---------\n");
+
         SequenceWithMinimum OurSequence = new SequenceWithMinimum();
         OurSequence.insertLeft(5);
         OurSequence.insertLeft(20);
@@ -29,7 +29,6 @@ public class Main {
         OurSequence.insertRight(7);
         OurSequence.insertRight(7);
         OurSequence.insertRight(10);
-
 
         OurSequence.printSequence(OurSequence.head);
 
